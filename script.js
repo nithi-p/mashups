@@ -1,6 +1,6 @@
 function getmapData(searchTerm){
-	var mapURL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
-	var searchURL = mapURL + searchTerm + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
+	var mapURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
+	var searchURL = mapURL + searchTerm + '&sort=newest&api-key=da4296185b3ce7acf15ae8680a643105%3A8%3A72241595';
 	console.log(searchURL);
 
 
@@ -18,25 +18,24 @@ function getmapData(searchTerm){
 			console.log(data);
 
 			//var theOriginalSearchTerm = data[0];
-			// var totalResults = data[1].length;
-			// var theNames = data[1];
-			// var theLinks = data[3];
-
-			// console.log(theNames);
-			// var theHTMLString = '<ol>';
-			// for (var i=0; i<totalResults; i++){
-			// 	var currentName = theNames[i];
-			// 	var currentLink = theLinks[i];
-
-			// 	console.log(currentName+currentLink+"\n");
-
-			// 	theHTMLString += '<li><a href="' + currentLink + ' "> ' + currentName + '</a></li>';
-
-			// }
-			// theHTMLString += '</ol>';
+			var totalResults = data.response.docs.length;
+			console.log(totalResults);
 
 
-			// $('#theResult').append(theHTMLString);
+			var theHTMLString = '<ol>';
+			for (var i=0; i<totalResults; i++){
+			 //var currentPic = data.response.docs[i].multimedia[1].url;
+			 var currentHead = data.response.docs[i].headline.main;
+
+			// // 	console.log(currentName+currentLink+"\n");
+
+			 theHTMLString += '<li>' + currentHead + '</li>';
+
+			}
+			theHTMLString += '</ol>';
+
+
+			$('#theResult').append(theHTMLString);
 
 
 		}

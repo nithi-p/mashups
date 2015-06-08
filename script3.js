@@ -1,6 +1,6 @@
 function getmapData(searchTerm){
 	var mapURL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
-	var searchURL = mapURL + searchTerm + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
+	var searchURL = mapURL + searchTerm + '&key=AIzaSyBlNl8tYOvWqEZ453CrQRGqRcnCXF-dUXQ';
 	console.log(searchURL);
 
 

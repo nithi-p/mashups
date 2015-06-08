@@ -1,6 +1,6 @@
-function getWikiData(searchTerm){
-	var wikiURL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
-	var searchURL = wikiURL + searchTerm + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
+function getmapData(searchTerm){
+	var mapURL = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=';
+	var searchURL = mapURL + searchTerm + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
 	console.log(searchURL);
 
 
@@ -61,11 +61,11 @@ $(document).ready(function(){  //JQUERY TO CHECK IF HTML&CODE IS LOADED
 	//SET UP EVENT LISTENERS
 
 
-	$('#wikiButton').click(function(){
+	$('#mapButton').click(function(){
 
 		var theInput = $('#theInputBox').val(); // GRAB THE ELEMENT AND RETURN THE "VALUE" USING JQUERY STYLE
 		console.log(theInput);
-		getWikiData(theInput);
+		getmapData(theInput);
 
 	});
 

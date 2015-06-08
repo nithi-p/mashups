@@ -22,17 +22,29 @@ function getmapData(searchTerm){
 			console.log(totalResults);
 
 
-			var theHTMLString = '<ol>';
+			var theHTMLString = '<div>';
 			for (var i=0; i<totalResults; i++){
-			 //var currentPic = data.response.docs[i].multimedia[1].url;
+			 
+
+			 
+			 
+
 			 var currentHead = data.response.docs[i].headline.main;
 
 			// // 	console.log(currentName+currentLink+"\n");
 
-			 theHTMLString += '<li>' + currentHead + '</li>';
+			 theHTMLString += '<p>' + currentHead;
+			 if (data.response.docs[i].multimedia.length !== 0){ 
+			   var currentPic = data.response.docs[i].multimedia[1].url;
+			   theHTMLString += '<br><br><img width="200" src="http://www.nytimes.com/' + currentPic + '""><br></p>';
+			}else{
+
+				theHTMLString +=  '<br></p>'
+			}
+
 
 			}
-			theHTMLString += '</ol>';
+			theHTMLString += '</div>';
 
 
 			$('#theResult').append(theHTMLString);

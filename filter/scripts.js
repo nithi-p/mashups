@@ -12,6 +12,10 @@ function createHTML(nyObj, igObj){
 	htmlString +='</div>';
 
 
+	htmlString +='<div class="original">';
+
+	htmlString +='<img src=' + igObj.images.low_resolution.url + ' />';
+	htmlString +='</div>';
 
 	$('#container').append(htmlString);
 

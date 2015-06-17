@@ -8,7 +8,7 @@ function getmapData(searchTerm){
 	$.ajax({   // SET UP AJAX
 		url: searchURL,
 		type: 'GET',
-		dataType: 'json', //different API --> different dataType
+		dataType: 'jsonp', //different API --> different dataType
 		error: function(data){
 			console.log("We got problems");
 			console.log(data);

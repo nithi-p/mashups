@@ -1,3 +1,6 @@
+
+
+
 function getmapData(searchTerm){
 	var mapURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=';
 	var searchURL = mapURL + searchTerm + '&sort=newest&api-key=da4296185b3ce7acf15ae8680a643105%3A8%3A72241595';
@@ -62,23 +65,25 @@ function getmapData(searchTerm){
 
 
 
+var message;
+
+$(document).ready(function(){
+	
+	console.log(message);
+});
 
 
 
-console.log("1");
 $(document).ready(function(){  //JQUERY TO CHECK IF HTML&CODE IS LOADED
 
 
 	//SET UP EVENT LISTENERS
+	message = $('#theMessage').html();
 
 
-	$('#mapButton').click(function(){
+		getmapData(message);
 
-		var theInput = $('#theInputBox').val(); // GRAB THE ELEMENT AND RETURN THE "VALUE" USING JQUERY STYLE
-		console.log(theInput);
-		getmapData(theInput);
 
-	});
 
 
 

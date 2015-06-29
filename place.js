@@ -8,7 +8,7 @@
 
                window.setTimeout(function() {
                 console.log(latestLat+','+latestLon);
-               }, 2000);
+               }, 5000);
 
 
 

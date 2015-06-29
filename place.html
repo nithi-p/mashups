@@ -119,7 +119,7 @@ function initialize() {
                 window.setTimeout(function() {
                   var center = map.getCenter();
                   marker.setPosition(center);
-                  console.log(center);
+                  sendPlace('null','null',center.A,center.F);
                 }, 10);
             });
 

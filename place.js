@@ -1,8 +1,5 @@
 
- function   sendPlace(thePlace,theAddress,theLat,theLon){
-
-  console.log(thePlace);
-  console.log(theAddress);
+ function   sendPlace(theLat,theLon){
   console.log(theLat);
   console.log(theLon);
  }
@@ -85,9 +82,9 @@ function initialize() {
                   var center = map.getCenter();
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
-                  //sendPlace('null','null',center.A,center.F);
+                  sendPlace(center.A,center.F);
                   //getmapData(center.A,center.F);
-               }, 1000);
+               }, 2000);
                 
             });
 

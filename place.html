@@ -56,11 +56,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 
     <script>
- function   sendPlace(thePlace,theAddress,theLocation){
+ function   sendPlace(thePlace,theAddress,theLat,theLon){
 
   console.log(thePlace);
   console.log(theAddress);
-  console.log(theLocation);
+  console.log(theLat);
+  console.log(theLon);
  }
 
 
@@ -165,7 +166,7 @@ function initialize() {
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
-    sendPlace(place.name,address,place.geometry.location.A); //send data
+    sendPlace(place.name,address,place.geometry.location.A,place.geometry.location.F); //send data
 
   });
 

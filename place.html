@@ -56,6 +56,13 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 
     <script>
+ function   sendPlace(thePlace,theAddress){
+
+  console.log(thePlace);
+  console.log(theAddress);
+ }
+
+
 function initialize() {
 
   var mapOptions = {
@@ -157,8 +164,11 @@ function initialize() {
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
-    console.log(place.name);
+    sendPlace(place.name,address); //send data
+
   });
+
+
 
   // Sets a listener on a radio button to change the filter type on Places
   // Autocomplete.

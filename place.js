@@ -87,7 +87,7 @@ function initialize() {
                   infowindow.setPosition(center);
                   //sendPlace('null','null',center.A,center.F);
                   getmapData(center.A,center.F);
-               }, 500);
+               }, 1500);
                 
             });
 

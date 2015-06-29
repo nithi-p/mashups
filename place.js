@@ -134,8 +134,8 @@ function initialize() {
       ].join(' ');
     }
 
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    infowindow.open(map, marker);
+  /*  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);*/
     sendPlace(place.name,address,place.geometry.location.A,place.geometry.location.F); //send data
 
   });

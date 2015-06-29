@@ -89,13 +89,13 @@ function initialize() {
             google.maps.event.addListener(map, 'center_changed', function() {
                 // 0.1 seconds after the center of the map has changed,
                 // set back the marker position.
-               /*window.setTimeout(function() {*/
+               window.setTimeout(function() {
                   var center = map.getCenter();
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
                   sendPlace(center.A,center.F);
                   //getmapData(center.A,center.F);
-              /* }, 1000);*/
+               }, 2000);
                 
             });
 

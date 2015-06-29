@@ -73,6 +73,10 @@
 
 function initialize() {
 
+
+
+
+
   var mapOptions = {
     zoom: 17
   };
@@ -101,6 +105,32 @@ function initialize() {
       });
 
       map.setCenter(pos);
+
+
+          var marker = new google.maps.Marker({
+                  position: pos,
+                  map: map,
+                  title: 'Hello World!'
+            });
+
+            google.maps.event.addListener(map, 'center_changed', function() {
+                // 0.1 seconds after the center of the map has changed,
+                // set back the marker position.
+                window.setTimeout(function() {
+                  var center = map.getCenter();
+                  marker.setPosition(center);
+                  console.log(center);
+                }, 10);
+            });
+
+
+
+
+
+
+
+
+
     }, function() {
       handleNoGeolocation(true);
     });

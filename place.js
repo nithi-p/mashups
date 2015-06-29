@@ -113,7 +113,7 @@ function initialize() {
 
                   google.maps.event.addListener(map, 'dragend', function() {
                       
-                      sendPlace(center.A,center.F);
+                      getmapData(center.A,center.F);
                     
                     });
 

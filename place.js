@@ -56,11 +56,11 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  var contentString = 
+/*  var contentString = 
       '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>'+
       '<div id="bodyContent">'+
       '<button id="save">YES</button>'+
-      '</div>';
+      '</div>';*/
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -71,12 +71,12 @@ function initialize() {
       //sendPlace('null','null',position.coords.latitude,position.coords.longitude);
       //getmapData(latestLat,latestLon);
 
-
+/*
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
         content: contentString
-      });
+      });*/
 
       map.setCenter(pos);
 
@@ -94,7 +94,7 @@ function initialize() {
                   });
 
                   google.maps.event.addListener(map, 'dragend', function() {
-                      infowindow.setPosition(center);
+                      //infowindow.setPosition(center);
                       getmapData(center.A,center.F);
                   });
 

@@ -66,9 +66,9 @@
 
 
 function initialize() {
-  var place = autocomplete.getPlace();
+
   var mapOptions = {
-    zoom: 16
+    zoom: 17
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -85,7 +85,7 @@ function initialize() {
       'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
       '(last visited June 22, 2009).</p>'+
       '</div>'+
-      '</div>'+place.name;
+      '</div>';
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -107,7 +107,12 @@ function initialize() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
-
+  
+var marker = L.marker([0,0]).bindPopup("Your pickup spot is in this area").addTo(map);
+function onMoveEnd(e) {
+  marker.setLatLng(map.getCenter());
+}
+map.on('moveend', onMoveEnd);
 
 
 
@@ -132,7 +137,7 @@ function initialize() {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
     marker.setVisible(false);
-    
+    var place = autocomplete.getPlace();
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
       return;
@@ -185,7 +190,10 @@ function initialize() {
   setupClickListener('changetype-address', ['address']);
   setupClickListener('changetype-establishment', ['establishment']);
   setupClickListener('changetype-geocode', ['geocode']);
-}
+
+
+
+} // end initialize
 
 
 

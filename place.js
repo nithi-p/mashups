@@ -35,7 +35,28 @@
     },
     success: function(data){
       console.log("WooHoo!!!");
-      console.log(data);
+      console.log(data.results[0].formatted_address);
+
+
+
+
+
+
+
+      var theHTMLString = data.results[0].formatted_address;
+
+
+      $('#theAddress').text(theHTMLString);
+
+
+
+
+
+
+
+
+
+
     }
   }); // END SET UP AJAX
 

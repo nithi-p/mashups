@@ -86,16 +86,22 @@ function initialize() {
                   map: map,
                   title: 'Hello World!'
             });*/
+               var center = map.getCenter();
 
-            google.maps.event.addListener(map, 'center_changed', function() {
+
+            google.maps.event.addListener(map, 'dragstart', function() {
                 // 0.1 seconds after the center of the map has changed,
                 // set back the marker position.
     
-                  var center = map.getCenter();
+   
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
                   //getmapData(center.A,center.F);
-                  
+
+
+                
+            });
+
 
                   google.maps.event.addListener(map, 'dragend', function() {
                       
@@ -103,9 +109,6 @@ function initialize() {
                     
                     });
 
-
-                
-            });
 
 
 

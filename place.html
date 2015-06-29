@@ -119,6 +119,7 @@ function initialize() {
                 window.setTimeout(function() {
                   var center = map.getCenter();
                   marker.setPosition(center);
+                  infowindow.setPosition(center);
                   sendPlace('null','null',center.A,center.F);
                 }, 10);
             });

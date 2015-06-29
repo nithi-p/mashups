@@ -66,7 +66,7 @@
 
 
 function initialize() {
-
+  var place = autocomplete.getPlace();
   var mapOptions = {
     zoom: 16
   };
@@ -76,7 +76,7 @@ function initialize() {
   var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>'+
       '<div id="bodyContent">'+
       '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
       'sandstone rock formation in the southern part of the '+
@@ -85,7 +85,7 @@ function initialize() {
       'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
       '(last visited June 22, 2009).</p>'+
       '</div>'+
-      '</div>';
+      '</div>'+place.name;
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -132,7 +132,7 @@ function initialize() {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
     marker.setVisible(false);
-    var place = autocomplete.getPlace();
+    
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
       return;

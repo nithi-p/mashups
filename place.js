@@ -86,14 +86,14 @@ function initialize() {
                   map: map,
                   title: 'Hello World!'
             });*/
-               var center = map.getCenter();
-
+              
+          var center;
 
             google.maps.event.addListener(map, 'dragstart', function() {
                 // 0.1 seconds after the center of the map has changed,
                 // set back the marker position.
     
-   
+                  center = map.getCenter();
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
                   //getmapData(center.A,center.F);

@@ -93,6 +93,8 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
+      sendPlace('null','null',position.coords.latitude,position.coords.longitude);
+
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
@@ -107,12 +109,7 @@ function initialize() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
-  
-var marker = L.marker([0,0]).bindPopup("Your pickup spot is in this area").addTo(map);
-function onMoveEnd(e) {
-  marker.setLatLng(map.getCenter());
-}
-map.on('moveend', onMoveEnd);
+
 
 
 

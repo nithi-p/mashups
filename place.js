@@ -7,6 +7,33 @@
   console.log(theLon);
  }
 
+ function getmapData(theLat,theLon){
+  var getlat = theLat;
+  var getlon = theLon;
+  var mapURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+  var searchURL = mapURL + theLat +','+ theLon + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
+  console.log(searchURL);
+
+
+  //$.ajax({ create object here });
+  $.ajax({   // SET UP AJAX
+    url: searchURL,
+    type: 'GET',
+    dataType: 'json', //different API --> different dataType
+    error: function(data){
+      console.log("We got problems");
+      console.log(data);
+    },
+    success: function(data){
+      console.log("WooHoo!!!");
+      console.log(data);
+    }
+  }); // END SET UP AJAX
+
+
+}
+
+
 
 function initialize() {
 
@@ -32,7 +59,8 @@ function initialize() {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
-      sendPlace('null','null',position.coords.latitude,position.coords.longitude);
+      //sendPlace('null','null',position.coords.latitude,position.coords.longitude);
+      getmapData(position.coords.latitude,position.coords.longitude);
 
 
       var infowindow = new google.maps.InfoWindow({
@@ -57,7 +85,8 @@ function initialize() {
                   var center = map.getCenter();
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
-                  sendPlace('null','null',center.A,center.F);
+                  //sendPlace('null','null',center.A,center.F);
+                  getmapData(center.A,center.F);
                }, 500);
                 
             });

@@ -86,8 +86,8 @@ function initialize() {
                   //marker.setPosition(center);
                   infowindow.setPosition(center);
                   //sendPlace('null','null',center.A,center.F);
-                  getmapData(center.A,center.F);
-               }, 2500);
+                  //getmapData(center.A,center.F);
+               }, 1000);
                 
             });
 

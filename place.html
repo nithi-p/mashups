@@ -61,13 +61,21 @@
 
       }
 
-            #pointer{
+        #pointer{
+        position: relative;
+        left:-6px;
+        top:-6px;
+        height:5px;
+        width:5px;
+        border: 3px solid rgba(255,255,255,0.5);
+        background-color: red;
+        border-radius: 100%;
+      }
+
+      #pointerContainer{
         position: absolute;
         left: 50%;
         top: 50%;
-        height:15px;
-        width:15px;
-        background-color: red;
       }
 
       #theAddress{
@@ -78,7 +86,29 @@
         color:#336699;
         text-transform: uppercase;
         text-align: center;
+
       }
+
+      #horiline{
+        position: absolute;
+        background-color: red;
+        opacity: 0.1;
+        height: 1px;
+        width: 100%;
+        top:50%;
+      }
+
+      #vertiline{
+        position: absolute;
+        background-color: red;
+        opacity: 0.1;
+        width: 1px;
+        top:0;
+        bottom:0;
+        left:50%;
+      }
+
+
 
     </style>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -103,8 +133,8 @@
       <label for="changetype-geocode">Geocodes</label>
     </div> -->
     <div id="map-canvas"></div>
-
-    <div id="pointer"></div>
+    <div id="horiline"></div><div id="vertiline"></div>
+    <div id="pointerContainer"><div id="pointer"></div></div>
     <div id="theAddress">DRAG THE SCREEN TO SELECT YOUR LOCATION</div>
   </body>
 </html>

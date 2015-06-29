@@ -11,19 +11,15 @@
                if (latestLat !== theLat && latestLon !== theLon){
                 latestLat = theLat;
                 latestLon = theLon;
-                break;
-               }else{
-                getmapData(latestLat,latestLon);
                }
 
+               getmapData(latestLat,latestLon);
 
  }
 
- function getmapData(theLat,theLon){
-  var getlat = theLat;
-  var getlon = theLon;
+ function getmapData(newLat,newLon){
   var mapURL = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
-  var searchURL = mapURL + theLat +','+ theLon + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
+  var searchURL = mapURL + newLat +','+ newLon + '&key=AIzaSyCYpdbTWMbgVmq-zT_2kUKCusKv91TjiBM';
   console.log(searchURL);
 
 

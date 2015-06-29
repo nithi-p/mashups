@@ -89,18 +89,26 @@ function initialize() {
               
           var center;
 
-            google.maps.event.addListener(map, 'dragstart', function() {
+/*            google.maps.event.addListener(map, 'dragstart', function() {
                 // 0.1 seconds after the center of the map has changed,
                 // set back the marker position.
     
                   center = map.getCenter();
                   //marker.setPosition(center);
-                  infowindow.setPosition(center);
                   //getmapData(center.A,center.F);
+            });*/
 
-
-                
+              google.maps.event.addListener(map, 'drag', function() {
+                // 0.1 seconds after the center of the map has changed,
+                // set back the marker position.
+    
+                              infowindow.setPosition(center);
+                              center = map.getCenter();
+                  //marker.setPosition(center);
+                  //getmapData(center.A,center.F);
             });
+
+
 
 
                   google.maps.event.addListener(map, 'dragend', function() {
@@ -108,6 +116,9 @@ function initialize() {
                       sendPlace(center.A,center.F);
                     
                     });
+
+
+
 
 
 

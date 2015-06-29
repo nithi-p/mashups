@@ -87,7 +87,7 @@ function initialize() {
                   infowindow.setPosition(center);
                   //sendPlace('null','null',center.A,center.F);
                   getmapData(center.A,center.F);
-               }, 1500);
+               }, 2500);
                 
             });
 
@@ -165,7 +165,8 @@ function initialize() {
 
   /*  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);*/
-    sendPlace(place.name,address,place.geometry.location.A,place.geometry.location.F); //send data
+    
+    //sendPlace(place.name,address,place.geometry.location.A,place.geometry.location.F); //send data
 
   });
 

@@ -96,7 +96,7 @@ function initialize() {
                   infowindow.setPosition(center);
                   sendPlace(center.A,center.F);
                   //getmapData(center.A,center.F);
-               }, 2000);
+               }, 3000);
                 
             });
 

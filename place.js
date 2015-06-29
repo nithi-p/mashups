@@ -3,14 +3,15 @@
 
  function   sendPlace(theLat,theLon){
 
-
-
-
-
-
                 latestLat = theLat;
                 latestLon = theLon;
+
+               window.setTimeout(function() {
                 console.log(latestLat+','+latestLon);
+               }, 2000);
+
+
+
 
 
               // getmapData(latestLat,latestLon);

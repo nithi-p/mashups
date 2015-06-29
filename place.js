@@ -87,35 +87,16 @@ function initialize() {
                   title: 'Hello World!'
             });*/
               
-          var center;
+                  var center;
 
-/*            google.maps.event.addListener(map, 'dragstart', function() {
-                // 0.1 seconds after the center of the map has changed,
-                // set back the marker position.
-    
-                  center = map.getCenter();
-                  //marker.setPosition(center);
-                  //getmapData(center.A,center.F);
-            });*/
-
-              google.maps.event.addListener(map, 'drag', function() {
-                // 0.1 seconds after the center of the map has changed,
-                // set back the marker position.
-    
-                              infowindow.setPosition(center);
-                              center = map.getCenter();
-                  //marker.setPosition(center);
-                  //getmapData(center.A,center.F);
-            });
-
-
-
+                  google.maps.event.addListener(map, 'drag', function() {
+                      center = map.getCenter();
+                  });
 
                   google.maps.event.addListener(map, 'dragend', function() {
-                      
+                      infowindow.setPosition(center);
                       getmapData(center.A,center.F);
-                    
-                    });
+                  });
 
 
 
@@ -193,8 +174,8 @@ function initialize() {
       ].join(' ');
     }
 
-  /*  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    infowindow.open(map, marker);*/
+   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);
     
     //sendPlace(place.name,address,place.geometry.location.A,place.geometry.location.F); //send data
 

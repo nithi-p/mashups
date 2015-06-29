@@ -6,9 +6,9 @@
                 latestLat = theLat;
                 latestLon = theLon;
 
-               window.setTimeout(function() {
+
                 console.log(latestLat+','+latestLon);
-               }, 5000);
+
 
 
 
@@ -96,7 +96,7 @@ function initialize() {
                   infowindow.setPosition(center);
                   sendPlace(center.A,center.F);
                   //getmapData(center.A,center.F);
-               }, 3000);
+               }, 10);
                 
             });
 

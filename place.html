@@ -73,19 +73,8 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-  var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-      'sandstone rock formation in the southern part of the '+
-      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-      '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-      'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-      '(last visited June 22, 2009).</p>'+
-      '</div>'+
-      '</div>';
+  var contentString = 
+      '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>';
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -94,6 +83,7 @@ function initialize() {
                                        position.coords.longitude);
 
       sendPlace('null','null',position.coords.latitude,position.coords.longitude);
+
 
       var infowindow = new google.maps.InfoWindow({
         map: map,

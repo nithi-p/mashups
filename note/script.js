@@ -46,7 +46,7 @@
       var theHTMLString = data.results[0].formatted_address;
 
 
-      $('#theAddress').text(theHTMLString);
+      $('#theAddress').text(theHTMLString+'<br><button>SAVE</button>');
 
 
 

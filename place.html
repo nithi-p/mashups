@@ -52,6 +52,12 @@
         font-weight: 300;
       }
 
+      #firstHeading {
+        font-family: Roboto;
+        color:red;
+
+      }
+
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 
@@ -74,7 +80,10 @@ function initialize() {
       mapOptions);
 
   var contentString = 
-      '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>';
+      '<h1 id="firstHeading" class="firstHeading">IS THIS YOUR LOCATION?</h1>'+
+      '<div id="bodyContent">'+
+      'Enter your location in the text box above'
+      '</div>';
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {

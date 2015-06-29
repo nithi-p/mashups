@@ -58,9 +58,8 @@
     <script>
 function initialize() {
 
-
-var mapOptions = {
-    zoom: 12
+  var mapOptions = {
+    zoom: 16
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -70,11 +69,12 @@ var mapOptions = {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
-        var infowindow = new google.maps.InfoWindow({
+
+      var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'YOU ARE HERE'
-
+        content: 'Location found using HTML5.'
+      });
 
       map.setCenter(pos);
     }, function() {
@@ -84,8 +84,6 @@ var mapOptions = {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
-
-
 
 
 

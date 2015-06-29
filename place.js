@@ -1,5 +1,4 @@
-                var latestLat;
-                var latestLon;
+
 
 
  function   sendPlace(theLat,theLon){
@@ -8,12 +7,13 @@
 
 
 
-               if (latestLat !== theLat && latestLon !== theLon){
+
                 latestLat = theLat;
                 latestLon = theLon;
-               }
+                console.log(latestLat+','+latestLon);
 
-               getmapData(latestLat,latestLon);
+
+              // getmapData(latestLat,latestLon);
 
  }
 
@@ -68,9 +68,7 @@ function initialize() {
                                        position.coords.longitude);
 
       //sendPlace('null','null',position.coords.latitude,position.coords.longitude);
-                latestLat = position.coords.latitude;
-                latestLon = position.coords.longitude;
-      getmapData(latestLat,latestLon);
+      //getmapData(latestLat,latestLon);
 
 
       var infowindow = new google.maps.InfoWindow({
@@ -97,7 +95,7 @@ function initialize() {
                   infowindow.setPosition(center);
                   sendPlace(center.A,center.F);
                   //getmapData(center.A,center.F);
-               }, 10);
+               }, 1000);
                 
             });
 
